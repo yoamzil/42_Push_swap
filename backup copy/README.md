@@ -1,3 +1,0 @@
-# thelizma
-# mine
-# mine

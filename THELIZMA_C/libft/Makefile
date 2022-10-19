@@ -17,8 +17,8 @@ ${NAME}:	${OBJS}
 			ranlib ${NAME}
 
 
-%.c:%.o
-			${CC} ${CFLAGS}  -c $@ -o $^ 
+%.o:%.c
+		${CC} ${CFLAGS} -c -o $@ $^ 
 
 clean:
 			${RM} ${OBJS}

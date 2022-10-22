@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:09:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/07 15:49:09 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 12:19:41 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	if (dstsize == 0)
 		return (i);
-	while (j < (dstsize - 1) && src[j] != '\0')
+	while (j < (dstsize - 1) && src[j])
 	{
 		dst[j] = src[j];
 		j++;
@@ -31,3 +31,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[j] = '\0';
 	return (i);
 }
+
+/*
+#include <stdio.h>
+int	main (void)
+{
+	char	dst[10] = "Youness";
+	char	src[10] = "Amzil";
+
+	printf("%zu", ft_strlcpy(dst, src, 4));
+}
+*/

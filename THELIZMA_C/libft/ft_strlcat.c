@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:59:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/10 16:19:56 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 12:41:16 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[j] = '\0';
 	return (lens + lend);
 }
+
+/*
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char	src[] = "Youness";
+	char	dst[] = "Amzil";
+	printf("%zu", ft_strlcat(dst, src, 2));
+	printf("%zu", strlcat(dst, src, 2));
+}
+*/

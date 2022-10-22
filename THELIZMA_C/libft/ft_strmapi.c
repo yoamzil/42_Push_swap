@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:46:48 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/10 16:21:09 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:20:03 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	pointer[i] = '\0';
 	return (pointer);
 }
+/*
+#include <stdio.h>
+
+char	f(unsigned int i, char c)
+{
+	c++;
+	return (c);
+}
+int	main(void)
+{
+	char	s[] = "Youness";
+	printf("%s", ft_strmapi(s, f));
+}
+*/

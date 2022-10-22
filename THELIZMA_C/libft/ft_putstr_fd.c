@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:17:33 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/11 20:43:16 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 14:41:41 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,17 @@ void	ft_putstr_fd(char *s, int fd)
 		}
 	}
 }
+/*
+#include <fcntl.h>
+
+int	main(void)
+{
+	int	fd;
+
+	fd = open("text", O_CREAT | O_RDWR, 777);
+	if (fd > 0)
+	{
+		ft_putstr_fd("abc", fd);
+	}
+}
+*/

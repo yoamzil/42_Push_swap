@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:26:53 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/17 17:59:37 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 18:43:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,10 @@ int	ft_atoi(const char *str)
 	}
 	return (number * sign);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	printf("%d", ft_atoi("-2147483649"));
+}
+*/

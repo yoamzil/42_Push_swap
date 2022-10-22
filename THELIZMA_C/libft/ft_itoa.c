@@ -6,13 +6,13 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:56:15 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/18 18:06:39 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 16:37:16 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(int n)
+static	int	len(int n)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ int	len(int n)
 	return (i);
 }
 
-char	*to_string(int n, char *str, int i, int num)
+static char	*to_string(int n, char *str, int i, int num)
 {
 	if (n < 0)
 	{

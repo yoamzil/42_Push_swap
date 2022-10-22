@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:20:15 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/11 20:42:58 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:38:42 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,17 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
+/*
+#include <stdio.h>
+
+void	f(unsigned int i, char *c)
+{
+	*c = '0';
+}
+int	main(void)
+{
+	char	s[] = "Youness";
+	ft_striteri(s, f);
+	printf("%s", s);
+}
+*/

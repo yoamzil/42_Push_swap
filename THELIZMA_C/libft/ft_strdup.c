@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:06:08 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/10 16:19:04 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:18:16 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,12 @@ char	*ft_strdup(const char *s1)
 	ft_memmove(target, s1, len + 1);
 	return (target);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	s1[] = "Youness";
+
+	printf("%s", ft_strdup(s1));
+}
+*/

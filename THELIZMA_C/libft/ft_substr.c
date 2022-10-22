@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:35:55 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/18 18:06:08 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:51:30 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	pointer[len] = '\0';
 	return (pointer);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	str[] = "Youness";
+	printf("%s", ft_substr(str, 2, 9));
+}
+*/

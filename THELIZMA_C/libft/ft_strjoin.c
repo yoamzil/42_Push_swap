@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:23:34 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/10 00:02:13 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:26:43 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	pointer[i + j] = '\0';
 	return (pointer);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	s1[] = "Youness";
+	char	s2[] = "Amzil";
+	printf("%s", ft_strjoin(s1, s2));
+}
+*/

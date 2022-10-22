@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:55:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/03 15:51:59 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 12:54:43 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+
 /*
 #include <stdio.h>
-
 int	main(void)
 {
-	char	b[16] = "TOOLATE";
-	printf("%s", ft_memset(b, 'a', 11));
+	//char	b[16] = "TOOLATE";
+	int	b[5] = {1,6,8,5,3};
+	printf("%s", ft_memset(b, '8', 5));
 	return (0);
-}*/
+}
+*/

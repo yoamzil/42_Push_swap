@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:32:26 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/17 20:18:47 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/21 18:38:40 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	s1[] = "steph is the goat";
+	char	s2[] = "is";
+	printf("%s", ft_strnstr(s1, s2, 8));
+}
+*/

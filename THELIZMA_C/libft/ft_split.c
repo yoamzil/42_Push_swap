@@ -6,13 +6,13 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:49:22 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/17 17:43:19 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/10/22 16:39:18 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_num(char const *str, char c)
+static int	word_num(char const *str, char c)
 {
 	int	i;
 	int	j;
@@ -33,7 +33,7 @@ int	word_num(char const *str, char c)
 	return (j);
 }
 
-int	letter_num(char const *str, int i, char c)
+static int	letter_num(char const *str, int i, char c)
 {
 	int	j;
 
@@ -55,7 +55,7 @@ int	letter_num(char const *str, int i, char c)
 	return (0);
 }
 
-char	*get_word(char const *s, char **tab, int i, char c)
+static char	*get_word(char const *s, char **tab, int i, char c)
 {
 	int	k;
 	int	j;

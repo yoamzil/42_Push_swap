@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:05:20 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/11/11 21:11:10 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/11/12 19:38:06 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*join(char *s, int fd)
 			free(buffer);
 			return (NULL);
 		}
-		else if (r <= 0)
+		else if (r == 0)
 			break ;
 		buffer[r] = '\0';
 		s = ft_strjoin(s, buffer);

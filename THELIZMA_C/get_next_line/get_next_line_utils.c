@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:28:56 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/11/11 21:07:01 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/11/12 19:08:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strchr(char *s, int c)
 		i++;
 	if (!s[i] || (s[i] == c && s[i + 1] == '\0'))
 		return (0);
-	str = malloc (ft_strlen(s) - i + 1);
+	str = malloc (ft_strlen(s) - i);
 	if (!str)
 		return (0);
 	i += 1;

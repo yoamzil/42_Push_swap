@@ -1,27 +1,30 @@
-SRCS	= ft_client.c ft_server.c ft_tools.c
+CLIENT_NAME	= client
+CLIENT_OBJS	= ft_client.o ft_tools.o
 
-OBJS	= ${SRCS:.c=.o}
+SERVER_NAME	= server
+SERVER_OBJS	= ft_server.o ft_tools.o
 
-NAME	= minitalk.a
-
-CC		= gcc
+CC		= cc
 
 CFLAGS	= -Wall -Werror -Wextra
 
 RM		= rm -f
 
-all:	${NAME}
+all:	${CLIENT_NAME} ${SERVER_NAME}
 
-${NAME}:	${OBJS}
-		ar rcs ${NAME} ${OBJS}
+${CLIENT_NAME}:	${CLIENT_OBJS}
+		$(CC) $(CFLAGS) -o $(CLIENT_NAME) $(CLIENT_OBJS)
+
+${SERVER_NAME}:	${SERVER_OBJS}
+		$(CC) $(CFLAGS) -o $(SERVER_NAME) $(SERVER_OBJS)
 
 %.o:%.c
 		${CC} -c $< -o $@
 
 clean:
-		${RM} ${OBJS}
+		${RM} *.o
 
 fclean:		clean
-		${RM} ${NAME}
+		${RM} ${CLIENT_NAME} ${SERVER_NAME}
 
 re:		fclean all

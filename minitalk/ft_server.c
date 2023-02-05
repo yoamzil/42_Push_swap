@@ -6,20 +6,26 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 18:38:00 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/01/28 18:16:16 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/02/05 18:09:57 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	sig_usr(int sign)
+void	sig_usr(int sign, siginfo_t *info, void *context)
 {
 	static char	buffer[8];
 	static int	index;
+	static int	client_pid;
 	int			decimal;
 	int			j;
 
 	decimal = 0;
+	if (client_pid != info->si_pid)
+	{
+		ft_bzero(buffer, 8);
+		client_pid = info->si_pid;
+	}
 	if (sign == SIGUSR1)
 		buffer[index++] = '0';
 	else if (sign == SIGUSR2)
@@ -28,10 +34,7 @@ void	sig_usr(int sign)
 	{
 		j = 0;
 		while (j < 8)
-		{
-			decimal = (decimal * 2) + (buffer[j] - 48);
-			j++;
-		}
+			decimal = (decimal * 2) + (buffer[j++] - 48);
 		ft_putchar(decimal);
 		index = 0;
 	}
@@ -39,11 +42,14 @@ void	sig_usr(int sign)
 
 int	main(void)
 {
-	int	server_pid;
+	struct sigaction	action;
+	int					server_pid;
 
+	action.sa_sigaction = &sig_usr;
+	action.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &action, NULL);
+	sigaction(SIGUSR2, &action, NULL);
 	server_pid = getpid();
-	signal(SIGUSR1, sig_usr);
-	signal(SIGUSR2, sig_usr);
 	ft_putnbr(server_pid);
 	ft_putchar('\n');
 	while (1)

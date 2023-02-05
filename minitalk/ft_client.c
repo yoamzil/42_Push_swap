@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 18:38:13 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/01/28 18:16:21 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/02/05 16:04:32 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	main(int argc, char *argv[])
 	server_pid = atoi(argv[1]);
 	str = argv[2];
 	i = 0;
+	if (server_pid < 2)
+		return (1);
 	if (argc != 3)
 	{
 		printf("Number of arguments isn't correct.\n");

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 18:21:21 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/01/28 18:21:25 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/02/05 16:23:36 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,21 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 		ft_putnbr(2);
 		ft_putnbr(147483648);
+	}
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*str;
+	char	cc;
+
+	i = 0;
+	str = s;
+	cc = '\0';
+	while (i < n)
+	{
+		str[i] = cc;
+		i++;
 	}
 }

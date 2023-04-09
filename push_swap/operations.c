@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:46:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/07 02:04:21 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/09 02:43:14 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void    ra(t_stack *a)
 void    rb(t_stack *b)
 {
     ra(b);
-    printf("\n-%i-\n", b->data[b->top]);
+    // printf("\n-%i-\n", b->data[b->top]);
 }
 
 void    rr(t_stack *a, t_stack *b)

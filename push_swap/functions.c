@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/08 02:54:18 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/09 02:57:06 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,27 +170,57 @@ void	ft_indexing(t_stack *a)
     a->data = tab;
 }
 
-int	max_finder(t_stack *b, int max)
+int	max_finder(t_stack *b)
 {
 	int i;
+	int	max;
 
-	i = b->top;
-	while (b->data[i] != max)
-		i--;
-	return (i);
+	i = 0;
+	max = b->top + 1;
+	while (i <= max)
+	{
+		if (b->data[i] == max)
+			break;
+		i++;
+	}
+	return (b->top - i);
 }
 void	travel_back(t_stack *a, t_stack *b)
 {
 	int	i;
-	int	rrb;
+	int	rb_num;
+	int	rrb_num;
 	int	max;
 
 	i = b->top;
-	max = b->top + 1;
-	int j = max_finder(b, max);
-	printf(" %d \n", j);
-	// while (i >= 0)
-	// {
-		
-	// }
+	while (i-- >= 0)
+    {
+        max = max_finder(b);
+		// exit(0);
+		printf("--> %d\n", max);
+        if (max < 0)
+            exit(1);
+        rb_num = max;
+        rrb_num = b->top - max + 1;
+        if (max != 0)
+        {
+            if (max <= b->top / 2)
+			{
+				while(rb_num)
+				{
+					rb(b);
+					rb_num--;
+				}
+			}
+            else
+            {
+				while(rrb_num)
+				{
+					rrb(b);
+					rrb_num--;
+				}
+			}
+        }
+        pa(a, b);
+    }
 }

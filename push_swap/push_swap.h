@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 00:16:42 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 02:42:18 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack {
     int *data;
     int top;
+    int looper;
 } t_stack;
 
 void    sa(t_stack *a);
@@ -48,5 +49,5 @@ int     max_finder(t_stack *b);
 int     get_min_value(t_stack *a);
 void	four_sort(t_stack *a, t_stack *b);
 void	five_sort(t_stack *a, t_stack *b);
-
+// void	sort_checker(t_stack *a);
 #endif

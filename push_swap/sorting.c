@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 23:39:27 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 00:35:39 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 02:53:41 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	sorting_alg(t_stack *a, t_stack *b)
 
 	index = a->top;
 	range_start = 0;
-	range_end = 10;
+	range_end = 14;
 	while (index >= 0)
 	{
 		if ((a->data[index] >= range_start) && (a->data[index] <= range_end))
@@ -126,8 +126,10 @@ void	sorting_alg(t_stack *a, t_stack *b)
 		}
 		else if (a->data[index] > range_end)
 		{
+			printf("im here\n");
 			ra(a);
 			printf("ra\n");
+
 		}
 		else if (a->data[index] < range_start)
 		{

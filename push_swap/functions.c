@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 00:33:30 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 02:49:54 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ void	free_tab(char **tab)
     }
     free(tab);
 }
+
+// void	sort_checker(t_stack *a)
+// {
+//     int i;
+
+//     i = a->top;
+//     while (i > 0)
+//     {
+//         if (a->data[i] < a->data[i - 1])
+//             exit(0);
+//         i--;
+//     }
+// }
+
 
 int	word_num(char const *str, char c)
 {
@@ -87,17 +101,18 @@ void	dup_checker(t_stack *a)
 {
 	int	i;
 	int	j;
+	int size;
 
+	
 	i = 0;
-	while (a->data[i])
+	size = a->top + 1;
+	while (i < size)
 	{
 		j = i + 1;
-		while (a->data[j])
+		while (j < size)
 		{
 			if (a->data[i] == a->data[j])
-			{
 				error_printing(a);
-			}
 			j++;
 		}
 		i++;
@@ -124,28 +139,29 @@ int	num_checker(char *str)
 
 void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 {
-	int		looper;
 	int		index;
 	int		metric;
 	char	**tab;
 	int		number;
 
-	looper = 0;
-	index = 0;
-	while (index < size)
+	a->looper = 0;
+	index = 1;
+	while (index <= size)
 	{
-		looper += word_num(arg[index], ' ');
+		a->looper += word_num(arg[index], ' ');
 		index++;
 	}
-	// printf("-->%d\n", size);
-	a->data = malloc(looper * sizeof(int));
-	b->data = malloc(looper * sizeof(int));
+	// printf("-->%d\n", a->looper);
+
+	a->data = malloc(a->looper * sizeof(int));
+	b->data = malloc(a->looper * sizeof(int));
 	if (!a->data || !b->data)
         exit(1);
 	while (size > 0)
 	{
 		tab = ft_split(arg[size], ' ');//5|\0 6|\0 9|\0
 		metric = word_num(arg[size], ' ') - 1;
+		// printf("%d\n", metric);
 		while (metric >= 0)
 		{
 			number = my_atoi(tab[metric], a);

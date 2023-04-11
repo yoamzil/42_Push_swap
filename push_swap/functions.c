@@ -6,12 +6,25 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/09 02:57:06 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 00:33:30 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+void	free_tab(char **tab)
+{
+    int i;
+
+    i = 0;
+    while (tab[i])
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
+}
 
 int	word_num(char const *str, char c)
 {
@@ -118,7 +131,8 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 	int		number;
 
 	looper = 0;
-	while (index <= size)
+	index = 0;
+	while (index < size)
 	{
 		looper += word_num(arg[index], ' ');
 		index++;
@@ -126,6 +140,8 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 	// printf("-->%d\n", size);
 	a->data = malloc(looper * sizeof(int));
 	b->data = malloc(looper * sizeof(int));
+	if (!a->data || !b->data)
+        exit(1);
 	while (size > 0)
 	{
 		tab = ft_split(arg[size], ' ');//5|\0 6|\0 9|\0
@@ -139,6 +155,7 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 			metric--;
 		}
 		size--;
+		free_tab(tab);
 	}
 	dup_checker(a);
 }
@@ -185,6 +202,7 @@ int	max_finder(t_stack *b)
 	}
 	return (b->top - i);
 }
+
 void	travel_back(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -196,8 +214,6 @@ void	travel_back(t_stack *a, t_stack *b)
 	while (i-- >= 0)
     {
         max = max_finder(b);
-		// exit(0);
-		printf("--> %d\n", max);
         if (max < 0)
             exit(1);
         rb_num = max;
@@ -223,4 +239,36 @@ void	travel_back(t_stack *a, t_stack *b)
         }
         pa(a, b);
     }
+}
+
+// void	sorting_four(t_stack *a)
+// {
+// 		int	i;
+		
+// 		i = get_max_value(&a);
+// 		printf("hada howa lmax: %d\n", i);
+// 		while (i == a.data[data])
+// 		{
+// 			pb(&a, &b);
+// 		}
+// 		three_sort(&a);
+// 		pa(&a, &b);
+// 		// ra(&a);
+		
+// }
+int get_min_value(t_stack *stack)
+{
+    int min = INT_MAX;
+	int	i;
+
+	i = 0;
+    while (i <= stack->top)
+    {
+        if (stack->data[i] < min)
+        {
+            min = stack->data[i];
+        }
+		i++;
+    }
+    return (min);
 }

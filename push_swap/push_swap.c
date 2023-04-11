@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/09 02:54:21 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 00:17:04 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,56 @@ int	main(int argc, char **argv)
 		printf("%d\n", a.data[i]);
 		i--;
 	}
-	ft_indexing(&a);
+	printf("---------B-----------\n");
+	
+	i = b.top;
+	while (i >= 0)
+	{
+		printf("%d\n", b.data[i]);
+		i--;
+	}
+	
+	// i = a.top;
+	// while (i >= 0)
+	// {
+	// 	printf("%d\n", a.data[i]);
+	// 	i--;
+	// }
+	if (argc == 4)
+	{
+		// ft_indexing(&a);
+		three_sort(&a);
+	}
+	else if (argc == 5)
+	{
+		four_sort(&a, &b);
+	}
+	else if (argc == 6)
+	{
+		five_sort(&a, &b);
+	}
+	else
+	{
+		ft_indexing(&a);
+		sorting_alg(&a, &b);
+	}
+	
+	printf("---------NewA-----------\n");
+	i = a.top;
+	while (i >= 0)
+	{
+		printf("%d\n", a.data[i]);
+		i--;
+	}
+	printf("---------NewB-----------\n");
+	
+	i = b.top;
+	while (i >= 0)
+	{
+		printf("%d\n", b.data[i]);
+		i--;
+	}
+}
 	
 	// i = b.top;
 	// while (i >= 0)
@@ -68,22 +117,3 @@ int	main(int argc, char **argv)
 	// }
 	
 	// pb(&a, &b);
-	sorting_alg(&a, &b);
-	
-	
-	printf("---------B-----------\n");
-	i = b.top;
-	while (i >= 0)
-	{
-		printf("%d\n", b.data[i]);
-		i--;
-	}
-	travel_back(&a, &b);
-	printf("---------NewA-----------\n");
-	i = a.top;
-	while (i >= 0)
-	{
-		printf("%d\n", a.data[i]);
-		i--;
-	}
-}

@@ -6,12 +6,105 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 23:39:27 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/09 02:11:28 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 00:35:39 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+void	min_of_three(t_stack *a, int *ptr)
+{
+    int    min;
+
+    if (a->data[0] < a->data[1])
+    {
+        min = a->data[0];
+        *ptr = 0;
+    }
+    else
+    {
+        min = a->data[1];
+        *ptr = 1;
+    }
+    if (a->data[2] < min)
+    {
+        min = a->data[2];
+        *ptr = 2;
+    }
+}
+
+void	max_of_three(t_stack *a, int *ptr)
+{
+    int    max;
+
+    if (a->data[0] > a->data[1])
+    {
+        max = a->data[0];
+        *ptr = 0;
+    }
+    else
+    {
+        max = a->data[1];
+        *ptr = 1;
+    }
+    if (a->data[2] > max)
+    {
+        max = a->data[2];
+		*ptr = 2;
+    }
+}
+
+void    three_sort(t_stack *a)
+{
+    int    i_max;
+
+    max_of_three(a, &i_max);
+    if (i_max == 2)
+	{
+		ra(a);
+		printf("ra\n");
+	}
+    else if (i_max == 1)
+	{
+		rra(a);
+		printf("rra\n");
+	}
+    if (a->data[2] > a->data[1])
+	{
+		sa(a);
+		printf("sa\n");
+	}
+}
+void	four_sort(t_stack *a, t_stack *b)
+{
+		int	i;
+		
+		i = get_min_value(a);
+		while (i != a->data[a->top])
+		{
+			ra(a);
+			printf("ra\n");
+		}
+		pb(a, b);
+		three_sort(a);
+		pa(a, b);
+}
+
+void	five_sort(t_stack *a, t_stack *b)
+{
+		int	i;
+		
+		i = get_min_value(a);
+		while (i != a->data[a->top])
+		{
+			ra(a);
+			printf("ra\n");
+		}
+		pb(a, b);
+		four_sort(a, b);
+		pa(a, b);
+}
 
 void	sorting_alg(t_stack *a, t_stack *b)
 {
@@ -27,7 +120,6 @@ void	sorting_alg(t_stack *a, t_stack *b)
 		if ((a->data[index] >= range_start) && (a->data[index] <= range_end))
 		{
 			pb(a, b);
-			printf("pb\n");
 			range_start++;
 			range_end++;
 			index--;
@@ -40,12 +132,11 @@ void	sorting_alg(t_stack *a, t_stack *b)
 		else if (a->data[index] < range_start)
 		{
 			pb(a, b);
-			printf("pb\n");
 			rb(b);
-			printf("rb\n");
 			range_start++;
 			range_end++;
 			index--;
 		}
 	}
+	travel_back(a, b);
 }

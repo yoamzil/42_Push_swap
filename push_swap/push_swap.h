@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/08 02:55:34 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 00:16:42 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,11 @@ void	push(t_stack *stack, int number);
 void	sorting_alg(t_stack *a, t_stack *b);
 void	ft_indexing(t_stack *a);
 void	travel_back(t_stack *a, t_stack *b);
+void	three_sort(t_stack *a);
+void	min_of_three(t_stack *a, int *ptr);
+int     max_finder(t_stack *b);
+int     get_min_value(t_stack *a);
+void	four_sort(t_stack *a, t_stack *b);
+void	five_sort(t_stack *a, t_stack *b);
 
 #endif

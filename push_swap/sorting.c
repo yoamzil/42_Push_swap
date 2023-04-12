@@ -6,12 +6,11 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 23:39:27 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:27:48 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:32:18 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	min_of_three(t_stack *a, int *ptr)
 {

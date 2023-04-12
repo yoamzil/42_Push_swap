@@ -6,48 +6,51 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 02:34:38 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:37:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include "libft/libft.h"
-
-#include <limits.h>
+# include "libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <strings.h>
 
 typedef struct s_stack {
-    int *data;
-    int top;
-    int looper;
-} t_stack;
+	int	*data;
+	int	top;
+	int	looper;
+}	t_stack;
 
-void    sa(t_stack *a);
-void    sb(t_stack *b);
-void    ss(t_stack *a, t_stack *b);
-void    pa(t_stack *a, t_stack *b);
-void    pb(t_stack *a, t_stack *b);
-void    ra(t_stack *a);
-void    rb(t_stack *b);
-void    rr(t_stack *a, t_stack *b);
-void    rra(t_stack *a);
-void    rrb(t_stack *b);
-void    rrr(t_stack *a, t_stack *b);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 void	error_printing(t_stack *a);
-int     word_num(char const *str, char c);
-int     ft_atoi(const char *str, t_stack *a);
-int     num_checker(char *str);
-void    arg_checker(int	size, t_stack *a, t_stack *b, char **arg);
+int		word_num(char const *str, char c);
+int		ft_atoi(const char *str, t_stack *a);
+int		num_checker(char *str);
+void	arg_checker(int size, t_stack *a, t_stack *b, char **arg);
 void	push(t_stack *stack, int number);
 void	sorting_alg(t_stack *a, t_stack *b, int range_end);
 void	ft_indexing(t_stack *a);
 void	travel_back(t_stack *a, t_stack *b);
 void	three_sort(t_stack *a);
 void	min_of_three(t_stack *a, int *ptr);
-int     max_finder(t_stack *b);
-int     get_min_value(t_stack *a);
+int		max_finder(t_stack *b);
+int		get_min_value(t_stack *a);
 void	four_sort(t_stack *a, t_stack *b);
 void	five_sort(t_stack *a, t_stack *b);
-int     sort_checker(t_stack *a);
+int		sort_checker(t_stack *a);
+
 #endif

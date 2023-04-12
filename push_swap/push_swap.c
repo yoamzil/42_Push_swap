@@ -6,14 +6,11 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 22:58:34 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:32:38 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <strings.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 void	push(t_stack *stack, int number)
 {

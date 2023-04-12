@@ -6,13 +6,11 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:12:20 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:32:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <strings.h>
 
 void	free_tab(char **tab)
 {

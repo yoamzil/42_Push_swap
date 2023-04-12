@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 23:39:27 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 02:49:30 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:56:57 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,22 @@
 
 void	min_of_three(t_stack *a, int *ptr)
 {
-    int    min;
-
-    if (a->data[0] < a->data[1])
-    {
-        min = a->data[0];
-        *ptr = 0;
-    }
-    else
-    {
-        min = a->data[1];
-        *ptr = 1;
-    }
-    if (a->data[2] < min)
-    {
-        min = a->data[2];
-        *ptr = 2;
-    }
+	int	min;
+	if (a->data[0] < a->data[1])
+	{
+		min = a->data[0];
+		*ptr = 0;
+	}
+	else
+	{
+		min = a->data[1];
+		*ptr = 1;
+	}
+	if (a->data[2] < min)
+	{
+		min = a->data[2];
+		*ptr = 2;
+	}
 }
 
 void	max_of_three(t_stack *a, int *ptr)

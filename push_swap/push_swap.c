@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 02:46:50 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:54:18 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <strings.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 
 void	push(t_stack *stack, int number)
 {
@@ -24,13 +23,11 @@ void	push(t_stack *stack, int number)
 
 int	main(int argc, char **argv)
 {
-	t_stack a;
-	t_stack b;
+	t_stack	a;
+	t_stack	b;
 	// int		i;
-
 	a.top = -1;
 	b.top = -1;
-	
 	arg_checker(argc - 1, &a, &b, argv);
 	if (sort_checker(&a))
 		exit(0);
@@ -55,19 +52,16 @@ int	main(int argc, char **argv)
 	}
 	else if (a.looper == 100)
 	{
-		
 		ft_indexing(&a);
-		sorting_alg(&a, &b, 14);	
+		sorting_alg(&a, &b, 14);
 	}
 	else if (a.looper == 500)
 	{
-		
 		ft_indexing(&a);
 		sorting_alg(&a, &b, 36);
 	}
 	else
-	{
-		
+	{	
 		ft_indexing(&a);
 		sorting_alg(&a, &b, (a.looper * 100) / 14);
 	}

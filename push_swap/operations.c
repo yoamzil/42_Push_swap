@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:46:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 00:07:44 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:49:20 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int	pop(t_stack *stack)
 	int	i;
 
 	i = stack->data[stack->top];
-    // printf("%d-->",stack->data[stack->top]);
 	stack->top--;
-    // printf("--------%d",stack->top);
 	return (i);	
 }
 void    sa(t_stack *a)
@@ -40,7 +38,6 @@ void    sb(t_stack *b)
 {
     sa(b);
     printf("sb\n");
-    // printf("\n-%i-\n", b->data[b->top]);
 }
 
 void    ss(t_stack *a, t_stack *b)
@@ -54,17 +51,10 @@ void    pa(t_stack *a, t_stack *b)
 {
     push(a, pop(b));
     printf("pa\n");
-    // if (b->top >= 0) {
-    //     a->top++;
-    //     a->data[a->top] = b->data[b->top];
-    //     b->top--;
-    // }
 }
 
 void    pb(t_stack *a, t_stack *b)
 {
-    // push(b, pop(a));
-    // pa(b, a);
     if (a->top == -1)
         return;
     
@@ -72,8 +62,6 @@ void    pb(t_stack *a, t_stack *b)
     b->data[b->top] = a->data[a->top];
     a->top--;
     printf("pb\n");
-    // printf("\n-%i-\n", b->data[b->top]);
-    // printf("\nb top :%i-\n", a->top);
 }
 
 void    ra(t_stack *a)
@@ -98,7 +86,6 @@ void    rb(t_stack *b)
 {
     ra(b);
     printf("rb\n");
-    // printf("\n-%i-\n", b->data[b->top]);
 }
 
 void    rr(t_stack *a, t_stack *b)

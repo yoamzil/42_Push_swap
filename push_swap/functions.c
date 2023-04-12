@@ -6,12 +6,13 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 02:49:54 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:48:40 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+#include <strings.h>
 
 void	free_tab(char **tab)
 {
@@ -26,18 +27,19 @@ void	free_tab(char **tab)
     free(tab);
 }
 
-// void	sort_checker(t_stack *a)
-// {
-//     int i;
+int	sort_checker(t_stack *a)
+{
+    int i;
 
-//     i = a->top;
-//     while (i > 0)
-//     {
-//         if (a->data[i] < a->data[i - 1])
-//             exit(0);
-//         i--;
-//     }
-// }
+    i = a->top;
+    while (i > 0)
+    {
+        if (a->data[i] > a->data[i - 1])
+            return (0);
+        i--;
+    }
+	return (1);
+}
 
 
 int	word_num(char const *str, char c)
@@ -64,7 +66,6 @@ int	word_num(char const *str, char c)
 void	error_printing(t_stack *a)
 {
 	write(2, "Error\n", 6);
-	//free(a);
 	exit(0);
 }
 
@@ -151,17 +152,13 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 		a->looper += word_num(arg[index], ' ');
 		index++;
 	}
-	// printf("-->%d\n", a->looper);
-
 	a->data = malloc(a->looper * sizeof(int));
-	b->data = malloc(a->looper * sizeof(int));
-	if (!a->data || !b->data)
+	if (!a->data)
         exit(1);
 	while (size > 0)
 	{
-		tab = ft_split(arg[size], ' ');//5|\0 6|\0 9|\0
+		tab = ft_split(arg[size], ' ');
 		metric = word_num(arg[size], ' ') - 1;
-		// printf("%d\n", metric);
 		while (metric >= 0)
 		{
 			number = my_atoi(tab[metric], a);
@@ -183,9 +180,12 @@ void	ft_indexing(t_stack *a)
     int    i;
 
     tab = malloc((a->top + 1) * sizeof(int));
-	j = 0;
     if (!tab)
         exit(EXIT_FAILURE);
+	j = 0;
+	while(j < a->top + 1)
+		tab[j++] = 0;
+	j = 0;
     while (j <= a->top)
     {
         i = j;
@@ -194,7 +194,7 @@ void	ft_indexing(t_stack *a)
             if (a->data[j] >= a->data[i])
                 tab[j]++;
             else
-                tab[i]++;
+                tab[i]++;	
             i++;
         }
         j++;
@@ -257,21 +257,6 @@ void	travel_back(t_stack *a, t_stack *b)
     }
 }
 
-// void	sorting_four(t_stack *a)
-// {
-// 		int	i;
-		
-// 		i = get_max_value(&a);
-// 		printf("hada howa lmax: %d\n", i);
-// 		while (i == a.data[data])
-// 		{
-// 			pb(&a, &b);
-// 		}
-// 		three_sort(&a);
-// 		pa(&a, &b);
-// 		// ra(&a);
-		
-// }
 int get_min_value(t_stack *stack)
 {
     int min = INT_MAX;

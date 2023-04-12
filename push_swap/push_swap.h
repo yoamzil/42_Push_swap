@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 02:42:18 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:34:38 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int     ft_atoi(const char *str, t_stack *a);
 int     num_checker(char *str);
 void    arg_checker(int	size, t_stack *a, t_stack *b, char **arg);
 void	push(t_stack *stack, int number);
-void	sorting_alg(t_stack *a, t_stack *b);
+void	sorting_alg(t_stack *a, t_stack *b, int range_end);
 void	ft_indexing(t_stack *a);
 void	travel_back(t_stack *a, t_stack *b);
 void	three_sort(t_stack *a);
@@ -49,5 +49,5 @@ int     max_finder(t_stack *b);
 int     get_min_value(t_stack *a);
 void	four_sort(t_stack *a, t_stack *b);
 void	five_sort(t_stack *a, t_stack *b);
-// void	sort_checker(t_stack *a);
+int     sort_checker(t_stack *a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/11 02:50:59 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 02:46:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,21 @@ int	main(int argc, char **argv)
 {
 	t_stack a;
 	t_stack b;
-	int		i;
+	// int		i;
 
 	a.top = -1;
 	b.top = -1;
 	
 	arg_checker(argc - 1, &a, &b, argv);
-	// sort_checker(&a);
-	// printf("---------A-----------\n");
-	// i = a.top;
+	if (sort_checker(&a))
+		exit(0);
+	b.data = malloc(a.looper * sizeof(int));
+	// i = b.top;
 	// while (i >= 0)
 	// {
-	// 	printf("%d\n", a.data[i]);
+	// 	printf("%d\n", b.data[i]);
 	// 	i--;
 	// }
-	// printf("---------B-----------\n");
-	
-	i = b.top;
-	while (i >= 0)
-	{
-		printf("%d\n", b.data[i]);
-		i--;
-	}
-	// printf("%d\n", a.looper);
-	// exit(0);
 	if (a.looper == 3)
 	{
 		three_sort(&a);
@@ -62,25 +53,22 @@ int	main(int argc, char **argv)
 	{
 		five_sort(&a, &b);
 	}
+	else if (a.looper == 100)
+	{
+		
+		ft_indexing(&a);
+		sorting_alg(&a, &b, 14);	
+	}
+	else if (a.looper == 500)
+	{
+		
+		ft_indexing(&a);
+		sorting_alg(&a, &b, 36);
+	}
 	else
 	{
+		
 		ft_indexing(&a);
-		sorting_alg(&a, &b);
+		sorting_alg(&a, &b, (a.looper * 100) / 14);
 	}
-	
-	// printf("---------NewA-----------\n");
-	// i = a.top;
-	// while (i >= 0)
-	// {
-	// 	printf("%d\n", a.data[i]);
-	// 	i--;
-	// }
-	// printf("---------NewB-----------\n");
-	
-	// i = b.top;
-	// while (i >= 0)
-	// {
-	// 	printf("%d\n", b.data[i]);
-	// 	i--;
-	// }
 }

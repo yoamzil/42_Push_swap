@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:49:22 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/22 16:39:18 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/11 23:26:10 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,17 +98,18 @@ char	**ft_split(char const *s, char c)
 	get_word(s, tab, i, c);
 	return (tab);
 }
+
 /*#include <stdio.h>
 int	main(void)
 {
 	char	**str;
 	int	i;
 	
-	str = ft_split("youness was here", ' ');
+	str = ft_split(" 9 2 6 8", ' ');
 	i = 0;
 	while (i < 4)
 	{
-		printf("%s\n", str[i]);
+		printf("[%s]\n", str[i]);
 		i++;
 	}
 	return (0);

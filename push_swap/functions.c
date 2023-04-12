@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 02:48:40 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:12:20 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,30 @@
 
 void	free_tab(char **tab)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (tab[i])
-    {
-        free(tab[i]);
-        i++;
-    }
-    free(tab);
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }
 
 int	sort_checker(t_stack *a)
 {
-    int i;
+	int	i;
 
-    i = a->top;
-    while (i > 0)
-    {
-        if (a->data[i] > a->data[i - 1])
-            return (0);
-        i--;
-    }
+	i = a->top;
+	while (i > 0)
+	{
+		if (a->data[i] > a->data[i - 1])
+			return (0);
+		i--;
+	}
 	return (1);
 }
-
 
 int	word_num(char const *str, char c)
 {
@@ -102,9 +101,8 @@ void	dup_checker(t_stack *a)
 {
 	int	i;
 	int	j;
-	int size;
+	int	size;
 
-	
 	i = 0;
 	size = a->top + 1;
 	while (i < size)
@@ -123,7 +121,7 @@ void	dup_checker(t_stack *a)
 int	num_checker(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if ((str[i] == '+' || str[i] == '-') && ft_strlen(str) > 1)
 		i++;
@@ -138,7 +136,7 @@ int	num_checker(char *str)
 	return (1);
 }
 
-void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
+void	arg_checker(int size, t_stack *a, t_stack *b, char **arg)
 {
 	int		index;
 	int		metric;
@@ -154,7 +152,7 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 	}
 	a->data = malloc(a->looper * sizeof(int));
 	if (!a->data)
-        exit(1);
+		exit(1);
 	while (size > 0)
 	{
 		tab = ft_split(arg[size], ' ');
@@ -175,37 +173,37 @@ void	arg_checker(int	size, t_stack *a, t_stack *b, char **arg)
 
 void	ft_indexing(t_stack *a)
 {
-    int    j;
-    int    *tab;
-    int    i;
+	int	i;
+	int	j;
+	int	*tab;
 
-    tab = malloc((a->top + 1) * sizeof(int));
-    if (!tab)
-        exit(EXIT_FAILURE);
+	tab = malloc((a->top + 1) * sizeof(int));
+	if (!tab)
+		exit(1);
 	j = 0;
-	while(j < a->top + 1)
+	while (j < a->top + 1)
 		tab[j++] = 0;
 	j = 0;
-    while (j <= a->top)
-    {
-        i = j;
-        while (i <= a->top)
-        {
-            if (a->data[j] >= a->data[i])
-                tab[j]++;
-            else
-                tab[i]++;	
-            i++;
-        }
-        j++;
-    }
-    free(a->data);
-    a->data = tab;
+	while (j <= a->top)
+	{
+		i = j;
+		while (i <= a->top)
+		{
+			if (a->data[j] >= a->data[i])
+				tab[j]++;
+			else
+				tab[i]++;
+			i++;
+		}
+		j++;
+	}
+	free(a->data);
+	a->data = tab;
 }
 
 int	max_finder(t_stack *b)
 {
-	int i;
+	int	i;
 	int	max;
 
 	i = 0;
@@ -213,7 +211,7 @@ int	max_finder(t_stack *b)
 	while (i <= max)
 	{
 		if (b->data[i] == max)
-			break;
+			break ;
 		i++;
 	}
 	return (b->top - i);
@@ -228,48 +226,49 @@ void	travel_back(t_stack *a, t_stack *b)
 
 	i = b->top;
 	while (i-- >= 0)
-    {
-        max = max_finder(b);
-        if (max < 0)
-            exit(1);
-        rb_num = max;
-        rrb_num = b->top - max + 1;
-        if (max != 0)
-        {
-            if (max <= b->top / 2)
+	{
+		max = max_finder(b);
+		if (max < 0)
+			exit(1);
+		rb_num = max;
+		rrb_num = b->top - max + 1;
+		if (max != 0)
+		{
+			if (max <= b->top / 2)
 			{
-				while(rb_num)
+				while (rb_num)
 				{
 					rb(b);
 					rb_num--;
 				}
 			}
-            else
-            {
-				while(rrb_num)
+			else
+			{
+				while (rrb_num)
 				{
 					rrb(b);
 					rrb_num--;
 				}
 			}
-        }
-        pa(a, b);
-    }
+		}
+		pa(a, b);
+	}
 }
 
-int get_min_value(t_stack *stack)
+int	get_min_value(t_stack *stack)
 {
-    int min = INT_MAX;
+	int	min;
 	int	i;
 
+	min = INT_MAX;
 	i = 0;
-    while (i <= stack->top)
-    {
-        if (stack->data[i] < min)
-        {
-            min = stack->data[i];
-        }
+	while (i <= stack->top)
+	{
+		if (stack->data[i] < min)
+		{
+			min = stack->data[i];
+		}
 		i++;
-    }
-    return (min);
+	}
+	return (min);
 }

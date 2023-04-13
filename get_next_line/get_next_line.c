@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:05:20 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/11/12 19:38:06 by yoamzil          ###   ########.fr       */
+/*   Updated: 2022/11/23 18:12:20 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,12 +109,15 @@ char	*get_next_line(int fd)
 // {
 // 	int fd;
 // 	char	*s;
-// 	fd = open("text.txt", O_RDONLY);
+// 	fd = open("text.txt", O_CREAT | O_RDONLY, 755);
 
 // 	while ((s = get_next_line(fd)))
 // 	{
 // 		printf("%s", s);
 // 	}
+// 	printf("%s", get_next_line(fd));
+// 	printf("%s", get_next_line(fd));
+// 	printf("%s", get_next_line(fd));
 // 	printf("%s", get_next_line(fd));
 // 	printf("%s", get_next_line(fd));
 // }

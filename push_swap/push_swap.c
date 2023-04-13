@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:49:02 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 04:56:57 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@ void	push(t_stack *stack, int number)
 {
 	stack->top++;
 	stack->data[stack->top] = number;
+}
+
+int	pop(t_stack *stack)
+{
+	int	i;
+
+	i = stack->data[stack->top];
+	stack->top--;
+	return (i);
 }
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 23:39:27 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:55:36 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 05:27:47 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,11 @@ void	three_sort(t_stack *a)
 
 	max_of_three(a, &i_max);
 	if (i_max == 2)
-	{
 		ra(a);
-		printf("ra\n");
-	}
 	else if (i_max == 1)
-	{
 		rra(a);
-		printf("rra\n");
-	}
 	if (a->data[2] > a->data[1])
-	{
 		sa(a);
-		printf("sa\n");
-	}
 }
 
 void	four_sort(t_stack *a, t_stack *b)
@@ -61,10 +52,7 @@ void	four_sort(t_stack *a, t_stack *b)
 
 	i = get_min_value(a);
 	while (i != a->data[a->top])
-	{
 		ra(a);
-		printf("ra\n");
-	}
 	pb(a, b);
 	three_sort(a);
 	pa(a, b);
@@ -76,10 +64,7 @@ void	five_sort(t_stack *a, t_stack *b)
 
 	i = get_min_value(a);
 	while (i != a->data[a->top])
-	{
 		ra(a);
-		printf("ra\n");
-	}
 	pb(a, b);
 	four_sort(a, b);
 	pa(a, b);
@@ -96,9 +81,7 @@ void	sorting_alg(t_stack *a, t_stack *b, int range_end)
 	{
 		if ((a->data[index] >= range_start) && (a->data[index] <= range_end))
 		{
-			pb(a, b);
-			range_start++;
-			range_end++;
+			sorting_alg_2(a, b, &range_start, &range_end);
 			index--;
 		}
 		else if (a->data[index] < range_start)
@@ -110,10 +93,7 @@ void	sorting_alg(t_stack *a, t_stack *b, int range_end)
 			index--;
 		}
 		else if (a->data[index] > range_end)
-		{
 			ra(a);
-			printf("ra\n");
-		}
 	}
 	travel_back(a, b);
 }

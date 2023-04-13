@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 00:17:21 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 05:35:38 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,24 +121,7 @@ void	travel_back(t_stack *a, t_stack *b)
 		rb_num = max;
 		rrb_num = b->top - max + 1;
 		if (max != 0)
-		{
-			if (max <= b->top / 2)
-			{
-				while (rb_num)
-				{
-					rb(b);
-					rb_num--;
-				}
-			}
-			else
-			{
-				while (rrb_num)
-				{
-					rrb(b);
-					rrb_num--;
-				}
-			}
-		}
+			travel_back_2(max, b, rb_num, rrb_num);
 		pa(a, b);
 	}
 }

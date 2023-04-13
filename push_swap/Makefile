@@ -6,7 +6,7 @@
 #    By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 02:19:43 by yoamzil           #+#    #+#              #
-#    Updated: 2023/04/13 00:18:07 by yoamzil          ###   ########.fr        #
+#    Updated: 2023/04/13 05:26:34 by yoamzil          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC			=   cc
 CFLAGS		=   -Wall -Wextra -Werror
 LIBFT		=   libft/libft.a
 RM			=   rm -f
-SRC			=   operations.c operations_2.c operations_3.c checkers.c functions.c sorting.c max_min_finders.c
+SRC			=   operations.c operations_2.c operations_3.c checkers.c functions.c sorting.c max_min_finders.c arg_checker_2.c travel_back_2.c sorting_alg_2.c
 PSP			=    push_swap.c
 
 SRC_BONUS	=	checker.c\

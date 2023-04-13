@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:32:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 00:17:21 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,6 @@ void	free_tab(char **tab)
 		i++;
 	}
 	free(tab);
-}
-
-int	sort_checker(t_stack *a)
-{
-	int	i;
-
-	i = a->top;
-	while (i > 0)
-	{
-		if (a->data[i] > a->data[i - 1])
-			return (0);
-		i--;
-	}
-	return (1);
 }
 
 int	word_num(char const *str, char c)
@@ -58,12 +44,6 @@ int	word_num(char const *str, char c)
 		}
 	}
 	return (j);
-}
-
-void	error_printing(t_stack *a)
-{
-	write(2, "Error\n", 6);
-	exit(0);
 }
 
 long	my_atoi(const char *str, t_stack *a)
@@ -95,80 +75,6 @@ long	my_atoi(const char *str, t_stack *a)
 	return (number * sign);
 }
 
-void	dup_checker(t_stack *a)
-{
-	int	i;
-	int	j;
-	int	size;
-
-	i = 0;
-	size = a->top + 1;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (a->data[i] == a->data[j])
-				error_printing(a);
-			j++;
-		}
-		i++;
-	}
-}
-
-int	num_checker(char *str)
-{
-	int	i;
-
-	i = 0;
-	if ((str[i] == '+' || str[i] == '-') && ft_strlen(str) > 1)
-		i++;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == 0)
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-void	arg_checker(int size, t_stack *a, t_stack *b, char **arg)
-{
-	int		index;
-	int		metric;
-	char	**tab;
-	int		number;
-
-	a->looper = 0;
-	index = 1;
-	while (index <= size)
-	{
-		a->looper += word_num(arg[index], ' ');
-		index++;
-	}
-	a->data = malloc(a->looper * sizeof(int));
-	if (!a->data)
-		exit(1);
-	while (size > 0)
-	{
-		tab = ft_split(arg[size], ' ');
-		metric = word_num(arg[size], ' ') - 1;
-		while (metric >= 0)
-		{
-			number = my_atoi(tab[metric], a);
-			if (!num_checker(tab[metric]))
-				error_printing(a);
-			push(a, number);
-			metric--;
-		}
-		size--;
-		free_tab(tab);
-	}
-	dup_checker(a);
-}
-
 void	ft_indexing(t_stack *a)
 {
 	int	i;
@@ -197,22 +103,6 @@ void	ft_indexing(t_stack *a)
 	}
 	free(a->data);
 	a->data = tab;
-}
-
-int	max_finder(t_stack *b)
-{
-	int	i;
-	int	max;
-
-	i = 0;
-	max = b->top + 1;
-	while (i <= max)
-	{
-		if (b->data[i] == max)
-			break ;
-		i++;
-	}
-	return (b->top - i);
 }
 
 void	travel_back(t_stack *a, t_stack *b)
@@ -251,22 +141,4 @@ void	travel_back(t_stack *a, t_stack *b)
 		}
 		pa(a, b);
 	}
-}
-
-int	get_min_value(t_stack *stack)
-{
-	int	min;
-	int	i;
-
-	min = INT_MAX;
-	i = 0;
-	while (i <= stack->top)
-	{
-		if (stack->data[i] < min)
-		{
-			min = stack->data[i];
-		}
-		i++;
-	}
-	return (min);
 }

@@ -1,62 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operations_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 13:46:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 00:06:48 by yoamzil          ###   ########.fr       */
+/*   Created: 2023/04/13 00:00:35 by yoamzil           #+#    #+#             */
+/*   Updated: 2023/04/13 00:01:22 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pop(t_stack *stack)
+void	sa(t_stack *a)
 {
-	int	i;
-
-	i = stack->data[stack->top];
-	stack->top--;
-	return (i);
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-	push(a, pop(b));
-	printf("pa\n");
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	if (a->top == -1)
-		return ;
-	b->top++;
-	b->data[b->top] = a->data[a->top];
-	a->top--;
-	printf("pb\n");
-}
-
-void	ra(t_stack *a)
-{
-	int	i;
 	int	tmp;
 
 	if (a->top > 0)
 	{
 		tmp = a->data[a->top];
-		i = a->top;
-		while (i > 0)
-		{
-			a->data[i] = a->data[i - 1];
-			i--;
-		}
-		a->data[0] = tmp;
+		a->data[a->top] = a->data[a->top - 1];
+		a->data[a->top - 1] = tmp;
 	}
 }
 
-void	rb(t_stack *b)
+void	sb(t_stack *b)
 {
-	ra(b);
-	printf("rb\n");
+	sa(b);
+	printf("sb\n");
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
+	printf("ss\n");
 }

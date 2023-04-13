@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"strings.h": "c",
+		"libft.h": "c"
+	}
+}

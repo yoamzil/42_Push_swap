@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:37:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 00:13:28 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int		get_min_value(t_stack *a);
 void	four_sort(t_stack *a, t_stack *b);
 void	five_sort(t_stack *a, t_stack *b);
 int		sort_checker(t_stack *a);
+long	my_atoi(const char *str, t_stack *a);
+void	free_tab(char **tab);
 
 #endif

@@ -1,62 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operations_3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 13:46:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 00:06:48 by yoamzil          ###   ########.fr       */
+/*   Created: 2023/04/13 00:02:42 by yoamzil           #+#    #+#             */
+/*   Updated: 2023/04/13 00:04:49 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pop(t_stack *stack)
+void	rr(t_stack *a, t_stack *b)
 {
-	int	i;
-
-	i = stack->data[stack->top];
-	stack->top--;
-	return (i);
+	ra(a);
+	rb(b);
+	printf("rr\n");
 }
 
-void	pa(t_stack *a, t_stack *b)
-{
-	push(a, pop(b));
-	printf("pa\n");
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	if (a->top == -1)
-		return ;
-	b->top++;
-	b->data[b->top] = a->data[a->top];
-	a->top--;
-	printf("pb\n");
-}
-
-void	ra(t_stack *a)
+void	rra(t_stack *a)
 {
 	int	i;
 	int	tmp;
 
 	if (a->top > 0)
 	{
-		tmp = a->data[a->top];
-		i = a->top;
-		while (i > 0)
+		tmp = a->data[0];
+		i = 0;
+		while (i < a->top)
 		{
-			a->data[i] = a->data[i - 1];
-			i--;
+			a->data[i] = a->data[i + 1];
+			i++;
 		}
-		a->data[0] = tmp;
+		a->data[a->top] = tmp;
 	}
 }
 
-void	rb(t_stack *b)
+void	rrb(t_stack *b)
 {
-	ra(b);
-	printf("rb\n");
+	rra(b);
+	printf("rrb\n");
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	rra(a);
+	rrb(b);
+	printf("rrr\n");
 }

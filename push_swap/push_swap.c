@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/12 23:32:38 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/12 23:49:02 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	a.top = -1;
 	b.top = -1;
 	arg_checker(argc - 1, &a, &b, argv);
+	ft_indexing(&a);
 	if (sort_checker(&a))
 		exit(0);
 	b.data = malloc(a.looper * sizeof(int));
@@ -36,18 +37,9 @@ int	main(int argc, char **argv)
 	else if (a.looper == 5)
 		five_sort(&a, &b);
 	else if (a.looper == 100)
-	{
-		ft_indexing(&a);
 		sorting_alg(&a, &b, 14);
-	}
 	else if (a.looper == 500)
-	{
-		ft_indexing(&a);
 		sorting_alg(&a, &b, 36);
-	}
 	else
-	{
-		ft_indexing(&a);
 		sorting_alg(&a, &b, (a.looper * 100) / 14);
-	}
 }

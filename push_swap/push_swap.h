@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 05:26:19 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 05:46:53 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	free_tab(char **tab);
 void	arg_checker_2(int size, t_stack *a, char **arg, char **tab);
 void	travel_back_2(int max, t_stack *b, int rb_num, int rrb_num);
 void	sorting_alg_2(t_stack *a, t_stack *b, int *range_start, int *range_end);
+void	initialize(t_stack *a, int *tab);
 
 #endif

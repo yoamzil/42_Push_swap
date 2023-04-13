@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:05:45 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 05:35:38 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/13 05:46:43 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,7 @@ void	ft_indexing(t_stack *a)
 	tab = malloc((a->top + 1) * sizeof(int));
 	if (!tab)
 		exit(1);
-	j = 0;
-	while (j < a->top + 1)
-		tab[j++] = 0;
+	initialize(a, tab);
 	j = 0;
 	while (j <= a->top)
 	{

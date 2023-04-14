@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:00:35 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 05:01:16 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/14 01:52:12 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(t_stack *a)
 		a->data[a->top] = a->data[a->top - 1];
 		a->data[a->top - 1] = tmp;
 	}
-	printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
@@ -35,7 +35,7 @@ void	sb(t_stack *b)
 		b->data[b->top] = b->data[b->top - 1];
 		b->data[b->top - 1] = tmp;
 	}
-	printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b)
@@ -54,5 +54,5 @@ void	ss(t_stack *a, t_stack *b)
 		b->data[b->top] = b->data[b->top - 1];
 		b->data[b->top - 1] = tmp;
 	}
-	printf("ss\n");
+	write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:35:55 by yoamzil           #+#    #+#             */
-/*   Updated: 2022/10/22 10:51:30 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/14 02:39:05 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*pointer;
 	size_t	slen;
-	size_t	i;
 
 	if (!s)
 		return (0);
 	slen = ft_strlen(s);
-	i = start;
 	if (start >= slen)
 		return (ft_strdup(""));
 	if (len > slen - start)

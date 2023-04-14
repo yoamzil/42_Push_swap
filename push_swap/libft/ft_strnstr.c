@@ -16,13 +16,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	counter;
 	char	*haystack1;
 	int		needlelen;
 
 	i = 0;
 	j = 0;
-	counter = 0;
 	haystack1 = (char *)haystack;
 	if (!*needle)
 		return (haystack1);

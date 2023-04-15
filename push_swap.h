@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/14 01:50:56 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 02:55:52 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -36,6 +37,17 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+void	sa_B(t_stack *a);
+void	sb_B(t_stack *b);
+void	ss_B(t_stack *a, t_stack *b);
+void	pa_B(t_stack *a, t_stack *b);
+void	pb_B(t_stack *a, t_stack *b);
+void	ra_B(t_stack *a);
+void	rb_B(t_stack *b);
+void	rr_B(t_stack *a, t_stack *b);
+void	rra_B(t_stack *a);
+void	rrb_B(t_stack *b);
+void	rrr_B(t_stack *a, t_stack *b);
 void	error_printing(t_stack *a);
 int		word_num(char const *str, char c);
 int		ft_atoi(const char *str, t_stack *a);
@@ -59,5 +71,6 @@ void	arg_checker_2(int size, t_stack *a, char **arg, char **tab);
 void	travel_back_2(int max, t_stack *b, int rb_num, int rrb_num);
 void	sorting_alg_2(t_stack *a, t_stack *b, int *range_start, int *range_end);
 void	initialize(t_stack *a, int *tab);
+void	comparing(t_stack *a, t_stack *b, char *str);
 
 #endif

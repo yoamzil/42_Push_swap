@@ -46,7 +46,7 @@ int	word_num(char const *str, char c)
 	return (j);
 }
 
-long	my_atoi(const char *str, t_stack *a)
+long	my_atoi(const char *str)
 {
 	int		i;
 	long	number;
@@ -60,7 +60,7 @@ long	my_atoi(const char *str, t_stack *a)
 	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i + 1] == '+' || str[i + 1] == '-')
-			error_printing(a);
+			error_printing();
 		else if (str[i] == '-')
 			sign *= (-1);
 		i++;
@@ -69,7 +69,7 @@ long	my_atoi(const char *str, t_stack *a)
 	{
 		number = (number * 10) + (str[i] - '0');
 		if (number > INT_MAX)
-			error_printing(a);
+			error_printing();
 		i++;
 	}
 	return (number * sign);

@@ -21,13 +21,13 @@ void	arg_checker_2(int size, t_stack *a, char **arg, char **tab)
 	{
 		tab = ft_split(arg[size], ' ');
 		if (tab[0] == NULL)
-			error_printing(a);
+			error_printing();
 		metric = word_num(arg[size], ' ') - 1;
 		while (metric >= 0)
 		{
-			number = my_atoi(tab[metric], a);
+			number = my_atoi(tab[metric]);
 			if (!num_checker(tab[metric]))
-				error_printing(a);
+				error_printing();
 			push(a, number);
 			metric--;
 		}

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	error_printing(t_stack *a)
+void	error_printing(void)
 {
 	write(2, "Error\n", 6);
 	exit(0);
@@ -46,7 +46,7 @@ void	dup_checker(t_stack *a)
 		while (j < size)
 		{
 			if (a->data[i] == a->data[j])
-				error_printing(a);
+				error_printing();
 			j++;
 		}
 		i++;
@@ -78,6 +78,7 @@ void	arg_checker(int size, t_stack *a, char **arg)
 
 	a->looper = 0;
 	index = 1;
+	tab = NULL;
 	while (index <= size)
 	{
 		a->looper += word_num(arg[index], ' ');

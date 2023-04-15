@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 01:44:51 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 02:56:41 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 22:33:20 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	a.top = -1;
 	b.top = -1;
 	str = NULL;
-	arg_checker(argc - 1, &a, &b, argv);
+	arg_checker(argc - 1, &a, argv);
 	ft_indexing(&a);
 	if (sort_checker(&a))
 		exit(0);

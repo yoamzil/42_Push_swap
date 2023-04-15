@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:08:35 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 05:13:33 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 22:31:58 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,10 @@ int	num_checker(char *str)
 	return (1);
 }
 
-void	arg_checker(int size, t_stack *a, t_stack *b, char **arg)
+void	arg_checker(int size, t_stack *a, char **arg)
 {
 	int		index;
-	int		metric;
 	char	**tab;
-	int		number;
 
 	a->looper = 0;
 	index = 1;

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:15:56 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/13 05:46:38 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 22:40:44 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ void	initialize(t_stack *a, int *tab)
 		tab[j++] = 0;
 }
 
-int	get_min_value(t_stack *stack)
+int	get_min_value(t_stack *a)
 {
 	int	min;
 	int	i;
 
 	min = INT_MAX;
 	i = 0;
-	while (i <= stack->top)
+	while (i <= a->top)
 	{
-		if (stack->data[i] < min)
+		if (a->data[i] < min)
 		{
-			min = stack->data[i];
+			min = a->data[i];
 		}
 		i++;
 	}

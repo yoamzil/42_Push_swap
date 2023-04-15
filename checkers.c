@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:08:35 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 22:31:58 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:24:44 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	arg_checker(int size, t_stack *a, char **arg)
 	}
 	a->data = malloc(a->looper * sizeof(int));
 	if (!a->data)
-		exit(1);
+		return ;
 	arg_checker_2(size, a, arg, tab);
 	dup_checker(a);
 }

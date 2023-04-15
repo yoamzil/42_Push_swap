@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 22:32:21 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:23:51 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,22 @@ int	pop(t_stack *stack)
 	return (i);
 }
 
+void	cases(t_stack *a, t_stack *b)
+{
+	if (a->looper == 3)
+		three_sort(a);
+	else if (a->looper == 4)
+		four_sort(a, b);
+	else if (a->looper == 5)
+		five_sort(a, b);
+	else if (a->looper == 100)
+		sorting_alg(a, b, 14);
+	else if (a->looper == 500)
+		sorting_alg(a, b, 36);
+	else
+		sorting_alg(a, b, (a->looper * 100) / 14);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -39,18 +55,12 @@ int	main(int argc, char **argv)
 	if (sort_checker(&a))
 		exit(0);
 	b.data = malloc(a.looper * sizeof(int));
-	if (a.looper == 3)
-		three_sort(&a);
-	else if (a.looper == 4)
-		four_sort(&a, &b);
-	else if (a.looper == 5)
-		five_sort(&a, &b);
-	else if (a.looper == 100)
-		sorting_alg(&a, &b, 14);
-	else if (a.looper == 500)
-		sorting_alg(&a, &b, 36);
-	else
-		sorting_alg(&a, &b, (a.looper * 100) / 14);
+	if (!b.data)
+	{
+		free(a.data);
+		return (0);
+	}
+	cases(&a, &b);
 	free(a.data);
 	free(b.data);
 }

@@ -6,18 +6,18 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:51:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 02:52:35 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:13:02 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa_B(t_stack *a, t_stack *b)
+void	pa_b(t_stack *a, t_stack *b)
 {
 	push(a, pop(b));
 }
 
-void	pb_B(t_stack *a, t_stack *b)
+void	pb_b(t_stack *a, t_stack *b)
 {
 	if (a->top == -1)
 		return ;
@@ -26,7 +26,7 @@ void	pb_B(t_stack *a, t_stack *b)
 	a->top--;
 }
 
-void	ra_B(t_stack *a)
+void	ra_b(t_stack *a)
 {
 	int	i;
 	int	tmp;
@@ -44,7 +44,7 @@ void	ra_B(t_stack *a)
 	}
 }
 
-void	rb_B(t_stack *b)
+void	rb_b(t_stack *b)
 {
 	int	i;
 	int	tmp;

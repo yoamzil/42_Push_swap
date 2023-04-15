@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 01:44:51 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 22:33:20 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:15:06 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,29 @@ int	pop(t_stack *stack)
 void	comparing(t_stack *a, t_stack *b, char *str)
 {
 	if (!ft_strncmp(str, "ra\n", 4))
-		ra_B(a);
+		ra_b(a);
 	else if (!ft_strncmp(str, "rb\n", 4))
-		rb_B(b);
+		rb_b(b);
 	else if (!ft_strncmp(str, "rr\n", 4))
-		rr_B(a, b);
+		rr_b(a, b);
 	else if (!ft_strncmp(str, "pa\n", 4))
-		pa_B(a, b);
+		pa_b(a, b);
 	else if (!ft_strncmp(str, "pb\n", 4))
-		pb_B(a, b);
+		pb_b(a, b);
 	else if (!ft_strncmp(str, "sa\n", 4))
-		sa_B(a);
+		sa_b(a);
 	else if (!ft_strncmp(str, "sb\n", 4))
-		sb_B(b);
+		sb_b(b);
 	else if (!ft_strncmp(str, "ss\n", 4))
-		ss_B(a, b);
+		ss_b(a, b);
 	else if (!ft_strncmp(str, "rra\n", 5))
-		rra_B(a);
+		rra_b(a);
 	else if (!ft_strncmp(str, "rrb\n", 5))
-		rrb_B(b);
+		rrb_b(b);
 	else if (!ft_strncmp(str, "rrr\n", 5))
-		rrr_B(a, b);
+		rrr_b(a, b);
 	else
-		error_printing(a);
+		error_printing();
 }
 
 int	main(int argc, char **argv)

@@ -6,13 +6,13 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:52:50 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 02:53:15 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:15:52 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa_B(t_stack *a)
+void	sa_b(t_stack *a)
 {
 	int	tmp;
 
@@ -24,7 +24,7 @@ void	sa_B(t_stack *a)
 	}
 }
 
-void	sb_B(t_stack *b)
+void	sb_b(t_stack *b)
 {
 	int	tmp;
 
@@ -36,7 +36,7 @@ void	sb_B(t_stack *b)
 	}
 }
 
-void	ss_B(t_stack *a, t_stack *b)
+void	ss_b(t_stack *a, t_stack *b)
 {
 	int	tmp;
 

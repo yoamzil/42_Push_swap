@@ -6,13 +6,13 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 02:53:25 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 02:54:00 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:12:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rr_B(t_stack *a, t_stack *b)
+void	rr_b(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	tmp;
@@ -38,7 +38,7 @@ void	rr_B(t_stack *a, t_stack *b)
 	}
 }
 
-void	rra_B(t_stack *a)
+void	rra_b(t_stack *a)
 {
 	int	i;
 	int	tmp;
@@ -56,7 +56,7 @@ void	rra_B(t_stack *a)
 	}
 }
 
-void	rrb_B(t_stack *b)
+void	rrb_b(t_stack *b)
 {
 	int	i;
 	int	tmp;
@@ -74,7 +74,7 @@ void	rrb_B(t_stack *b)
 	}
 }
 
-void	rrr_B(t_stack *a, t_stack *b)
+void	rrr_b(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	tmp;

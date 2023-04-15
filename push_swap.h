@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 22:32:52 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/15 23:16:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-void	sa_B(t_stack *a);
-void	sb_B(t_stack *b);
-void	ss_B(t_stack *a, t_stack *b);
-void	pa_B(t_stack *a, t_stack *b);
-void	pb_B(t_stack *a, t_stack *b);
-void	ra_B(t_stack *a);
-void	rb_B(t_stack *b);
-void	rr_B(t_stack *a, t_stack *b);
-void	rra_B(t_stack *a);
-void	rrb_B(t_stack *b);
-void	rrr_B(t_stack *a, t_stack *b);
-void	error_printing();
+void	sa_b(t_stack *a);
+void	sb_b(t_stack *b);
+void	ss_b(t_stack *a, t_stack *b);
+void	pa_b(t_stack *a, t_stack *b);
+void	pb_b(t_stack *a, t_stack *b);
+void	ra_b(t_stack *a);
+void	rb_b(t_stack *b);
+void	rr_b(t_stack *a, t_stack *b);
+void	rra_b(t_stack *a);
+void	rrb_b(t_stack *b);
+void	rrr_b(t_stack *a, t_stack *b);
+void	error_printing(void);
 int		word_num(char const *str, char c);
 int		ft_atoi(const char *str, t_stack *a);
 int		num_checker(char *str);

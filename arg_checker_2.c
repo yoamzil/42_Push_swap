@@ -20,7 +20,7 @@ void	arg_checker_2(int size, t_stack *a, char **arg, char **tab)
 	while (size > 0)
 	{
 		tab = ft_split(arg[size], ' ');
-		if (tab[0] == '\0')
+		if (tab[0] == NULL)
 			error_printing(a);
 		metric = word_num(arg[size], ' ') - 1;
 		while (metric >= 0)

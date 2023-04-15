@@ -51,4 +51,6 @@ int	main(int argc, char **argv)
 		sorting_alg(&a, &b, 36);
 	else
 		sorting_alg(&a, &b, (a.looper * 100) / 14);
+	free(a.data);
+	free(b.data);
 }

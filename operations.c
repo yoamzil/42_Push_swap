@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:46:18 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/14 01:51:43 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/16 05:47:19 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	pa(t_stack *a, t_stack *b)
 
 void	pb(t_stack *a, t_stack *b)
 {
-	if (a->top == -1)
-		return ;
-	b->top++;
-	b->data[b->top] = a->data[a->top];
-	a->top--;
+	push(b, pop(a));
 	write(1, "pb\n", 3);
 }
 

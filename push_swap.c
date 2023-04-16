@@ -6,24 +6,24 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:55:49 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 23:23:51 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/16 05:43:01 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack *stack, int number)
+void	push(t_stack *a, int number)
 {
-	stack->top++;
-	stack->data[stack->top] = number;
+	a->top++;
+	a->data[a->top] = number;
 }
 
-int	pop(t_stack *stack)
+int	pop(t_stack *a)
 {
 	int	i;
 
-	i = stack->data[stack->top];
-	stack->top--;
+	i = a->data[a->top];
+	a->top--;
 	return (i);
 }
 

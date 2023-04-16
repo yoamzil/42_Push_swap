@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 02:02:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/04/15 23:16:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/04/16 05:43:24 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		word_num(char const *str, char c);
 int		ft_atoi(const char *str, t_stack *a);
 int		num_checker(char *str);
 void	arg_checker(int size, t_stack *a, char **arg);
-void	push(t_stack *stack, int number);
-int		pop(t_stack *stack);
+void	push(t_stack *a, int number);
+int		pop(t_stack *a);
 void	sorting_alg(t_stack *a, t_stack *b, int range_end);
 void	ft_indexing(t_stack *a);
 void	travel_back(t_stack *a, t_stack *b);

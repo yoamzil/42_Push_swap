@@ -67,7 +67,10 @@ int	main(int argc, char **argv)
 	arg_checker(argc - 1, &a, argv);
 	ft_indexing(&a);
 	if (sort_checker(&a))
-		exit(0);
+	{
+		write(1, "OK\n", 3);
+		exit (0);
+	}
 	b.data = malloc(a.looper * sizeof(int));
 	while (1)
 	{

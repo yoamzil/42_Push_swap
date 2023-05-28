@@ -53,4 +53,3 @@ fclean : clean
 	make -C libft fclean
 
 re : fclean all
-	make -C libft fclean re
